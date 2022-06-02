@@ -23,6 +23,7 @@ function setup()
 	floorPos_y = height * 3/4;
 	gameChar_x = width/2;
 	gameChar_y = floorPos_y;
+	trees_x = [150,350,670];
 
 	// Boolean variables to control the movement of the game character.
 	isLeft = false;
@@ -53,7 +54,7 @@ function draw()
 	// Draw collectable items
 
 	// Draw the game character - this must be last
-
+	gameCharacter();
 	//////// Game character logic ///////
 	// Logic to move
 
@@ -109,4 +110,22 @@ function keyReleased()
 	{
 		isRight = false;
 	}
+}
+
+
+function gameCharacter(){
+	
+	fill (120,120,120);
+	ellipse(gameChar_x,gameChar_y-56,40);
+	fill(0);
+	ellipse(gameChar_x-10,gameChar_y-56,5);
+	ellipse(gameChar_x+10,gameChar_y-56,5);
+
+	fill (0,0,225);
+	rect (gameChar_x-15,gameChar_y-37,30,30);
+
+	fill (0);
+	rect(gameChar_x-15,gameChar_y-7,10,10);
+	rect(gameChar_x+5,gameChar_y-7,10,10);
+
 }
