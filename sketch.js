@@ -24,9 +24,25 @@ function setup()
 	floorPos_y = height * 3/4;
 	gameChar_x = width/2;
 	gameChar_y = floorPos_y;
-	trees_x = [150,350,670];
+	
+	trees_x = [150,350,870];
 	trees_y = [height/1.5,height/1.5,height/1.5];
 
+	clouds = [{	posX : 120 ,
+				posY : 100 ,
+				scale : 1.0},
+			  { posX : 430 ,
+				posY : 130 ,
+				scale : 1.5},
+			  { posX : 760 ,
+				posY : 90 ,
+				scale : 1.2}
+			 ];
+	// cloud = {
+	// 	posX : 180 ,
+	// 	posY : 100 ,
+	// 	scale : 1.2
+	// }
 	// Boolean variables to control the movement of the game character.
 	isLeft = false;
 	isRight = false;
@@ -50,7 +66,7 @@ function draw()
 	fill(0, 155, 0);
 	rect(0, floorPos_y, width, height/4); 
 	// Draw clouds.
-
+	clound();
 	// Draw mountains.
 
 	
@@ -157,4 +173,26 @@ function trees(){
 			trees_y[i]-90,
 			70);
 	}	
+}
+
+function clound(){
+	///////////////cloud////////////////
+	for(var i=0 ; i<clouds.length ; i++){
+	noStroke();
+	fill(255);
+	ellipse(clouds[i].posX,
+			clouds[i].posY,
+			60*clouds[i].scale);
+	ellipse(clouds[i].posX+30*clouds[i].scale,
+			clouds[i].posY - 10,
+			60*clouds[i].scale,
+			80*clouds[i].scale);
+	ellipse(clouds[i].posX+60*clouds[i].scale,
+			clouds[i].posY -5 ,
+			50*clouds[i].scale,
+			60*clouds[i].scale);
+	ellipse(clouds[i].posX+90*clouds[i].scale,
+			clouds[i].posY,
+			50*clouds[i].scale);
+	}
 }
