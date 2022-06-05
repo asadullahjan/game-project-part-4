@@ -16,7 +16,11 @@ var scrollPos;
 var clouds;
 var mountains;
 var trees;
-
+var tressAnchorX = 270;
+var cloudAnchorX = 150;
+var mountainAnchorX = 150;
+var canyonAnchorX = 270;
+var collactableAnchorX = 270;
 
 function setup() {
 	createCanvas(1024, 576);
@@ -26,34 +30,43 @@ function setup() {
 
 	trees = [
 		{
-			posX: 150,
-			posY: height / 1.5
+			posX: tressAnchorX,
+			posY: height / random(1.4,1.6)
 		},
 		{
-			posX: 350,
-			posY: height / 1.4
+			posX: tressAnchorX + 200,
+			posY: height / random(1.4,1.6)
 		},
 		{
-			posX: 870,
-			posY: height / 1.6
+			posX: tressAnchorX + 380,
+			posY: height / random(1.4,1.6)
+		},
+		{
+			posX: tressAnchorX + 650,
+			posY: height / random(1.4,1.6)
 		}
 	];
 
 	clouds = [
 		{
 			posX: 120,
-			posY: 100,
-			scale: 1.0
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
 		},
 		{
-			posX: 430,
-			posY: 130,
-			scale: 1.5
+			posX: cloudAnchorX +230,
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
 		},
 		{
-			posX: 760,
-			posY: 90,
-			scale: 1.2
+			posX: cloudAnchorX + 470,
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
+		},
+		{
+			posX : cloudAnchorX + 740,
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
 		}
 	];
 
@@ -63,11 +76,11 @@ function setup() {
 			posY: 256
 		},
 		{
-			posX: 370,
+			posX: mountainAnchorX+350,
 			posY: 256
 		},
 		{
-			posX: 680,
+			posX: mountainAnchorX + 680,
 			posY: 256
 		}
 	]
