@@ -20,6 +20,7 @@ var canyons;
 var collectables;
 
 
+///variables for anchoring the first position of each object
 var tressAnchorX = 270;
 var cloudAnchorX = 150;
 var mountainAnchorX = 150;
@@ -32,23 +33,40 @@ function setup() {
 	gameChar_x = width / 2;
 	gameChar_y = floorPos_y;
 
+	////object inserted into arrays  for building multiple object on the screen.
 	trees = [
 		{
 			posX: tressAnchorX,
-			posY: height / random(1.4,1.6)
+			size: random(100,125)
 		},
 		{
-			posX: tressAnchorX + 200,
-			posY: height / random(1.4,1.6)
+			posX: tressAnchorX + random(150,300),
+			size: random(100,125)
 		},
 		{
-			posX: tressAnchorX + 380,
-			posY: height / random(1.4,1.6)
+			posX: tressAnchorX + random(450,550),
+			size: random(100,125)
 		},
 		{
-			posX: tressAnchorX + 650,
-			posY: height / random(1.4,1.6)
-		}
+			posX: tressAnchorX + random(650,843),
+			size: random(100,125)
+		},
+		{
+			posX: tressAnchorX + random(1000,1208),
+			size: random(100,125)
+		},
+		{
+			posX: tressAnchorX + random(1300,1408),
+			size: random(100,125)
+		},
+		{
+			posX: tressAnchorX + random(1450,1609),
+			size: random(100,125)
+		},
+		{
+			posX: tressAnchorX + random(1780,1890),
+			size: random(100,125)
+		},
 	];
 
 	clouds = [
@@ -58,20 +76,36 @@ function setup() {
 			scale: random(1.0 , 1.5)
 		},
 		{
-			posX: cloudAnchorX +230,
+			posX: cloudAnchorX + random(230,321),
 			posY : random ( 50 , 150),
 			scale: random(1.0 , 1.5)
 		},
 		{
-			posX: cloudAnchorX + 470,
+			posX: cloudAnchorX + random(470,623),
 			posY : random ( 50 , 150),
 			scale: random(1.0 , 1.5)
 		},
 		{
-			posX : cloudAnchorX + 740,
+			posX : cloudAnchorX + random(740,882),
 			posY : random ( 50 , 150),
 			scale: random(1.0 , 1.5)
-		}
+		},
+		{
+			posX : cloudAnchorX + random(1040,1324),
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
+		},
+		{
+			posX : cloudAnchorX + random(1350,1643),
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
+		},
+		{
+			posX : cloudAnchorX + random(1770,1924),
+			posY : random ( 50 , 150),
+			scale: random(1.0 , 1.5)
+		},
+
 	];
 
 	mountains = [
@@ -80,11 +114,23 @@ function setup() {
 			posY: 256
 		},
 		{
-			posX: mountainAnchorX+350,
+			posX: mountainAnchorX+ random(400,500),
 			posY: 256
 		},
 		{
-			posX: mountainAnchorX + 680,
+			posX: mountainAnchorX + random(700,880),
+			posY: 256
+		},
+		{
+			posX: mountainAnchorX + random(1080,1450),
+			posY: 256
+		},
+		{
+			posX: mountainAnchorX + random(1580,1750),
+			posY: 256
+		},
+		{
+			posX: mountainAnchorX + random(2080,2380),
 			posY: 256
 		}
 	]
@@ -95,32 +141,59 @@ function setup() {
 			width : random(50,100)
 		},
 		{
-			posX : canyonAnchorX+340,
+			posX : canyonAnchorX+random(340,450),
 			width : random(50,100)
 		},
 		{
-			posX : canyonAnchorX+770,
+			posX : canyonAnchorX+random(770,860),
 			width : random(50,100)
-		}
+		},
+		{
+			posX : canyonAnchorX+random(1270,1400),
+			width : random(50,100)
+		},
+		{
+			posX : canyonAnchorX+random(1670,1780),
+			width : random(50,100)
+		},
+		{
+			posX : canyonAnchorX+random(2170,2300),
+			width : random(50,100)
+		},
 		
 	];
 
 	collectables = [
 		{
 			posX: collactableAnchorX,
-			posY: random(floorPos_y,floorPos_y-50),
-			size: random(20,40)
+			posY: random(floorPos_y-10,floorPos_y-50),
+			size: random(20,30)
 		},
 		{
-			posX: collactableAnchorX + 300,
-			posY: random(floorPos_y,floorPos_y-50),
-			size: random(20,40)
+			posX: collactableAnchorX + random(300,400),
+			posY: random(floorPos_y-10,floorPos_y-50),
+			size: random(20,30)
 		},
 		{
-			posX: collactableAnchorX +450,
-			posY: random(floorPos_y,floorPos_y-50),
-			size: random(20,40)
-		}
+			posX: collactableAnchorX +random(480,610),
+			posY: random(floorPos_y-10,floorPos_y-50),
+			size: random(20,30)
+		},
+		{
+			posX: collactableAnchorX + random(1050,1321),
+			posY: random(floorPos_y-10,floorPos_y-50),
+			size: random(20,30)
+		},
+		{
+			posX: collactableAnchorX + random(1550,1690),
+			posY: random(floorPos_y-10,floorPos_y-50),
+			size: random(20,30)
+		},
+		{
+			posX: collactableAnchorX + random(1670,1790),
+			posY: random(floorPos_y-10,floorPos_y-50),
+			size: random(20,30)
+		},
 	];
 	// Boolean variables to control the movement of the game character.
 	isLeft = false;
@@ -133,34 +206,37 @@ function setup() {
 }
 
 function draw() {
-	background(100, 155, 255); // fill the sky blue
-
-
-	////////// Draw mountains.
-	mountain();//calls the mountain function.
-	
-	////////// Draw trees.
-	tree();
+	// fill the sky blue
+	background(100, 155, 255); 
 	
 	////////// draw some green ground
 	noStroke();
 	fill(0, 155, 0);
 	rect(0, floorPos_y, width, height / 4);
-	
+
+
+	//push and pop to give the feeling of moving character.
+	push();
+	translate(scrollPos, 0);
+	////////// Draw mountains.
+	mountain();//calls the mountain function.
+	////////// Draw trees.
+	tree();//calls the tree function.
 	////////// Draw clouds.
-	clound();//calls the clound function.
-	
-
+	cloud();//calls the clound function.
 	////////// Draw canyons
-	canyon();
-
+	canyon();//calls the canyon function.
 	///////// Draw collectable items
-	collectable();
+	collectable();//calls the collectable function.
+	pop();
+
 
 	// Draw the game character - this must be last
 	gameCharacter();
-	//////// Game character logic ///////
-	// Logic to move
+
+
+	
+	//// Logic to move game character
 
 	if (isLeft) {
 		if (gameChar_x > width * 0.2) {
@@ -206,7 +282,7 @@ function keyReleased() {
 
 //////////GAMECHARACTER FUNCTION//////////
 function gameCharacter() {
-
+	//draws gamecharacter
 	fill(120, 120, 120);
 	ellipse(gameChar_x, gameChar_y - 56, 40);
 	fill(0);
@@ -224,31 +300,30 @@ function gameCharacter() {
 
 /////////TREE FUNCTION//////////////
 function tree() {
-	for (var i = 0; i < trees.length; i++) {
-		noStroke();
-		fill(128, 113, 83);
-		ellipse(trees[i].posX,
-			trees[i].posY,
-			40,
-			195);
-		fill(58, 95, 11);
-		ellipse(trees[i].posX - 40,
-			trees[i].posY - 60,
-			70);
-		ellipse(trees[i].posX,
-			trees[i].posY - 40,
-			70);
-		ellipse(trees[i].posX + 40,
-			trees[i].posY - 60,
-			70);
-		ellipse(trees[i].posX,
-			trees[i].posY - 90,
-			70);
+	//draws multiple trees.
+	for (var i=0 ; i < trees.length; i++)
+	{
+	fill (102,51,0);
+	rect(trees[i].posX,
+	     floorPos_y-height/4 ,
+		 55,145);//trunk
+
+    fill (0,125,0);
+	ellipse(trees[i].posX,
+		    floorPos_y-height/4,
+			trees[i].size);
+    ellipse(trees[i].posX+25,
+		    floorPos_y -height/4,
+			trees[i].size);
+	ellipse(trees[i].posX+50,
+		    floorPos_y-height/4 ,
+			trees[i].size);
 	}
 }
 
 ////////////CLOUND FUNCTION////////////////
-function clound() {
+function cloud() {
+	//draws multiple clouds
 	for (var i = 0; i < clouds.length; i++) {
 		noStroke();
 		fill(255);
@@ -271,6 +346,7 @@ function clound() {
 
 /////////////MOUNTAIN FUNCTION///////////
 function mountain() {
+	//draws multiple mountain.   
 	for(var i=0 ; i<mountains.length ; i++){
 		noStroke();
 		fill(121, 99, 66);
@@ -288,6 +364,7 @@ function mountain() {
 	}
 }
 function canyon() {
+	//draws multiple  canyon.
 	for(var i = 0 ; i < canyons.length ; i++){
 		noStroke();
 		fill(48,25,52);
@@ -298,6 +375,7 @@ function canyon() {
 }
 
 function collectable() {
+	//draws multiple collectable.
 	for(var i = 0 ; i<collectables.length ; i++){
 		strokeWeight(2);
 		stroke(0,255,0);
